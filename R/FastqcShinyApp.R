@@ -39,7 +39,7 @@
 #' @importFrom shiny plotOutput
 #' @importFrom shiny renderUI
 #' @importFrom shiny renderPrint
-#' @importFrom shiny runApp
+#' @importFrom shiny shinyApp
 #' @importFrom shiny textOutput
 #' @importFrom shiny renderText
 #' @importFrom shiny reactive
@@ -1821,8 +1821,6 @@ fastqcShiny <- function(fastqcInput = NULL) {
       }
     })
   }
-  
-  runApp(list(ui = ui, server = server), launch.browser = TRUE)
-  
+  shinyApp(ui = ui, server = server)
 }
 
